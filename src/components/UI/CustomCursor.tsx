@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface CustomCursorProps {
   isAudioEnabled: boolean;
@@ -9,6 +10,7 @@ const CustomCursor: React.FC<CustomCursorProps> = ({
   isAudioEnabled,
   isFirstInteraction
 }) => {
+  const { t } = useTranslation();
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isClicked, setIsClicked] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
@@ -24,7 +26,13 @@ const CustomCursor: React.FC<CustomCursorProps> = ({
       setIsOverCanvas(isOverRightHalf);
     };
 
-    const handleMouseDown = () => setIsClicked(true);
+    const handleMouseDown = () => {
+      setIsClicked(true);
+      // Only trigger interaction if clicking in canvas area
+      if (isOverCanvas) {
+        // This will be handled by the global click handler in App-Cinematic
+      }
+    };
     const handleMouseUp = () => setIsClicked(false);
     const handleMouseEnter = () => setIsHidden(false);
     const handleMouseLeave = () => setIsHidden(true);
@@ -57,8 +65,13 @@ const CustomCursor: React.FC<CustomCursorProps> = ({
     };
   }, []);
 
-  // Only show "Click to play and dance" on canvas area and before first interaction
-  const shouldShowLabel = isFirstInteraction && isOverCanvas;
+  // Only show tooltip on canvas area
+  const shouldShowLabel = isOverCanvas;
+  const labelText = isFirstInteraction 
+    ? t('nav.clickToPlay') 
+    : isAudioEnabled 
+      ? t('nav.doubleClickToMute')
+      : t('nav.clickToPlay');
 
   return (
     <div
@@ -85,10 +98,10 @@ const CustomCursor: React.FC<CustomCursorProps> = ({
           isAudioEnabled ? 'bg-blue-500' : 'bg-gray-400'
         }`} />
         
-        {/* Click to play and dance label */}
+        {/* Tooltip */}
         {shouldShowLabel && (
-          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-lg whitespace-nowrap animate-pulse">
-            Click to play and dance
+          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-lg whitespace-nowrap">
+            {labelText}
           </div>
         )}
       </div>

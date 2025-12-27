@@ -9,6 +9,8 @@ interface CharacterCanvasProps {
   vrmRef: React.RefObject<VRMModelRef>;
   setIsLoading: (loading: boolean) => void;
   setGreetingCompleted: (completed: boolean) => void;
+  onCanvasClick?: () => void;
+  onCanvasDoubleClick?: () => void;
 }
 
 const CharacterCanvas: React.FC<CharacterCanvasProps> = ({
@@ -16,6 +18,8 @@ const CharacterCanvas: React.FC<CharacterCanvasProps> = ({
   vrmRef,
   setIsLoading,
   setGreetingCompleted,
+  onCanvasClick,
+  onCanvasDoubleClick,
 }) => {
   return (
     <div className="fixed right-0 top-0 w-1/2 h-screen z-10">
@@ -23,6 +27,8 @@ const CharacterCanvas: React.FC<CharacterCanvasProps> = ({
         camera={{ position: [0, 0.8, 2.5], fov: 35 }}
         gl={{ antialias: true, alpha: true }}
         className="w-full h-full"
+        onClick={onCanvasClick}
+        onDoubleClick={onCanvasDoubleClick}
       >
         {/* Transparent background to show gradient */}
         <color attach="background" args={['transparent']} />

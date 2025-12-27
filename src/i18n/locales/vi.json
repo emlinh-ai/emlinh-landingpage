@@ -3,7 +3,9 @@
     "brand": "Em Linh AI",
     "contact": "Liên hệ hợp tác",
     "playAndDance": "Phát nhạc và nhảy",
-    "stopAndMute": "Dừng và tắt tiếng"
+    "stopAndMute": "Dừng và tắt tiếng",
+    "clickToPlay": "Nhấp để phát nhạc",
+    "doubleClickToMute": "Nhấp đôi để tắt tiếng"
   },
   "loading": {
     "title": "Đang tải Em Linh...",

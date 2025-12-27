@@ -102,8 +102,19 @@ export const useAudioManager = () => {
         });
       }
     } else {
-      // If disabling audio, stop dance music
+      // If disabling audio, stop dance music and reset first interaction
       stopDanceMusic();
+      setIsFirstInteraction(true);
+    }
+  }, [isAudioEnabled, stopDanceMusic]);
+
+  // Mute audio (separate from toggle for double click)
+  const muteAudio = useCallback(() => {
+    if (isAudioEnabled) {
+      setIsAudioEnabled(false);
+      stopDanceMusic();
+      // Reset first interaction so user can click to play again
+      setIsFirstInteraction(true);
     }
   }, [isAudioEnabled, stopDanceMusic]);
 
@@ -124,6 +135,7 @@ export const useAudioManager = () => {
     playScrollSound,
     handleFirstInteraction,
     toggleAudio,
+    muteAudio,
     playDanceMusic,
     stopDanceMusic,
     updateVolume,

@@ -3,7 +3,9 @@
     "brand": "Em Linh AI",
     "contact": "Contact Partnership",
     "playAndDance": "Play and Dance",
-    "stopAndMute": "Stop and Mute"
+    "stopAndMute": "Stop and Mute",
+    "clickToPlay": "Click to play music",
+    "doubleClickToMute": "Double click to mute"
   },
   "loading": {
     "title": "Loading Em Linh...",

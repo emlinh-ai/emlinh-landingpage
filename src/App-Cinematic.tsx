@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { registerAnimation } from '@emlinh/vrm-character-controller';
 import { useTranslation } from 'react-i18next';
 import type { VRMModelRef } from '@emlinh/vrm-character-controller';
@@ -14,6 +14,7 @@ import SectionIndicator from './components/UI/SectionIndicator';
 import CustomCursor from './components/UI/CustomCursor';
 import { useSectionScroll } from './hooks/useSectionScroll';
 import { useAudioManager } from './hooks/useAudioManager';
+import { useDebouncedCallback } from './hooks/useDebounce';
 
 // Register animations
 registerAnimation({
@@ -62,29 +63,56 @@ const AppCinematic: React.FC = () => {
     playScrollSound,
     handleFirstInteraction,
     toggleAudio,
+    muteAudio,
     updateVolume,
   } = useAudioManager();
   
+  // Canvas click handler
+  const handleCanvasClick = useCallback(() => {
+    if (isFirstInteraction) {
+      console.log('Canvas directly clicked, playing music');
+      handleFirstInteraction();
+    }
+  }, [isFirstInteraction, handleFirstInteraction]);
+
+  // Debounced canvas click handler (500ms)
+  const debouncedCanvasClick = useDebouncedCallback(handleCanvasClick, 500);
+
+  // Canvas double click handler
+  const handleCanvasDoubleClick = useCallback(() => {
+    if (!isFirstInteraction && isAudioEnabled) {
+      console.log('Canvas double clicked, muting music');
+      muteAudio();
+    }
+  }, [isFirstInteraction, isAudioEnabled, muteAudio]);
+
   // Initialize audio on mount
   useEffect(() => {
     initAudio();
   }, [initAudio]);
   
   // Global click handler for first interaction
-  useEffect(() => {
-    const handleGlobalClick = () => {
+  const handleGlobalClick = useCallback((e: MouseEvent) => {
+    // Only play music if click is in canvas area (right half of screen)
+    if (e.clientX > window.innerWidth / 2) {
+      console.log('Canvas clicked, playing music');
       handleFirstInteraction();
-    };
+    }
+  }, [handleFirstInteraction]);
 
+  // Debounced global click handler (500ms)
+  const debouncedGlobalClick = useDebouncedCallback(handleGlobalClick, 500);
+
+  useEffect(() => {
     // Only add listener if it's first interaction
     if (isFirstInteraction) {
-      document.addEventListener('click', handleGlobalClick, { once: true });
+      document.addEventListener('click', debouncedGlobalClick, { once: true });
       
       return () => {
-        document.removeEventListener('click', handleGlobalClick);
+        document.removeEventListener('click', debouncedGlobalClick);
       };
     }
-  }, [isFirstInteraction, handleFirstInteraction]);
+  }, [isFirstInteraction, debouncedGlobalClick]);
   
   // Use custom scroll hook
   const { currentSection, scrollToSection } = useSectionScroll({
@@ -92,7 +120,6 @@ const AppCinematic: React.FC = () => {
     vrmRef: vrmRef as React.RefObject<VRMModelRef>,
     greetingCompleted,
     playScrollSound,
-    handleFirstInteraction,
   });
   
   // Handle VRM animation based on dance mode
@@ -139,6 +166,8 @@ const AppCinematic: React.FC = () => {
         vrmRef={vrmRef as React.RefObject<VRMModelRef>}
         setIsLoading={setIsLoading}
         setGreetingCompleted={setGreetingCompleted}
+        onCanvasClick={debouncedCanvasClick}
+        onCanvasDoubleClick={handleCanvasDoubleClick}
       />
 
       {/* Scrollable Content - Left Side */}

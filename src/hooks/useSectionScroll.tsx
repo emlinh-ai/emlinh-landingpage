@@ -14,7 +14,6 @@ interface UseSectionScrollProps {
   vrmRef: React.RefObject<VRMModelRef>;
   greetingCompleted: boolean;
   playScrollSound: () => void;
-  handleFirstInteraction: () => void;
 }
 
 interface UseSectionScrollReturn {
@@ -29,7 +28,6 @@ export const useSectionScroll = ({
   vrmRef,
   greetingCompleted,
   playScrollSound,
-  handleFirstInteraction,
 }: UseSectionScrollProps): UseSectionScrollReturn => {
   const [currentSection, setCurrentSection] = useState(0);
   const sectionsRef = useRef<HTMLElement[]>([]);
@@ -42,7 +40,6 @@ export const useSectionScroll = ({
     }
 
     isScrollingRef.current = true;
-    handleFirstInteraction();
     playScrollSound();
     
     const targetY = sectionIndex * window.innerHeight;
