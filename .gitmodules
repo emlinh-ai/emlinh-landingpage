@@ -1,0 +1,3 @@
+[submodule "libs/vrm-character-controller"]
+	path = libs/vrm-character-controller
+	url = https://github.com/emlinh-ai/vrm-character-controller.git
