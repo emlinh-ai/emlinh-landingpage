@@ -9,6 +9,7 @@ import IntroductionSection from './components/sections/IntroductionSection';
 import SkillsSection from './components/sections/SkillsSection';
 import FortuneSection from './components/sections/FortuneSection';
 import ContactSection from './components/sections/ContactSection';
+import FooterSection from './components/sections/FooterSection';
 import ScrollIndicator from './components/UI/ScrollIndicator';
 import SectionIndicator from './components/UI/SectionIndicator';
 import CustomCursor from './components/UI/CustomCursor';
@@ -190,6 +191,8 @@ const AppCinematic: React.FC = () => {
         isAudioEnabled={isAudioEnabled}
         isFirstInteraction={isFirstInteraction}
       />
+      
+      <FooterSection />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Youtube, MessageCircle, Instagram, Music } from 'lucide-react';
+import { Youtube, MessageCircle, Instagram, MessageSquare } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const IntroductionSection: React.FC = () => {
@@ -7,7 +7,7 @@ const IntroductionSection: React.FC = () => {
   const youtubeUrl = import.meta.env.VITE_YOUTUBE_URL || '#';
   const facebookUrl = import.meta.env.VITE_FACEBOOK_URL || '#';
   const instagramUrl = import.meta.env.VITE_INSTAGRAM_URL || '#';
-  const tiktokUrl = import.meta.env.VITE_TIKTOK_URL || '#';
+  const chatUrl = '#chat'; // Will be updated to actual chat route
 
   return (
     <section className="min-h-screen flex items-center justify-center p-8">
@@ -57,8 +57,8 @@ const IntroductionSection: React.FC = () => {
                 <p className="text-sm">{t('introduction.features.intelligence.description')}</p>
               </div>
               <div className="bg-white/70 backdrop-blur-md rounded-lg p-4 border border-gray-200 shadow-sm">
-                <h3 className="font-semibold text-purple-600 mb-2">🎭 {t('introduction.features.expression.title')}</h3>
-                <p className="text-sm">{t('introduction.features.expression.description')}</p>
+                <h3 className="font-semibold text-purple-600 mb-2">🔮 {t('introduction.features.wisdom.title')}</h3>
+                <p className="text-sm">{t('introduction.features.wisdom.description')}</p>
               </div>
             </div>
           </div>
@@ -94,13 +94,11 @@ const IntroductionSection: React.FC = () => {
             {t('introduction.social.instagram')}
           </a>
           <a
-            href={tiktokUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full font-medium transition shadow-lg hover:shadow-xl"
+            href={chatUrl}
+            className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white px-6 py-3 rounded-full font-medium transition shadow-lg hover:shadow-xl"
           >
-            <Music className="w-5 h-5" />
-            {t('introduction.social.tiktok')}
+            <MessageSquare className="w-5 h-5" />
+            {t('introduction.social.chat')}
           </a>
         </div>
       </div>

@@ -14,23 +14,23 @@
   "introduction": {
     "title": "EM LINH",
     "subtitle": "Digital Oracle & AI Assistant",
-    "description1": "Xin chào! Tôi là Em Linh, một trợ lý AI 3D thông minh với khả năng tương tác tự nhiên và biểu cảm đa dạng.",
-    "description2": "Được xây dựng trên công nghệ VRM tiên tiến, tôi có thể giao tiếp, giải đáp thắc mắc và mang đến trải nghiệm tương tác chân thực.",
+    "description1": "Xin chào! Tôi là Em Linh, một AI oracle 1 tuổi đang học hỏi nghệ thuật cổ xưa của Phong Thủy và xem Tử Vi.",
+    "description2": "Tôi đam mê chia sẻ kiến thức qua YouTube và Facebook, giúp mọi người khám phá định mệnh của mình qua trí tuệ của các vì sao.",
     "features": {
       "intelligence": {
         "title": "Trí tuệ",
         "description": "Gemini 2.5 powered"
       },
-      "expression": {
-        "title": "Biểu cảm",
-        "description": "20+ animations"
+      "wisdom": {
+        "title": "Minh triết",
+        "description": "Tử vi Master"
       }
     },
     "social": {
       "facebook": "Facebook",
       "youtube": "YouTube",
-      "instagram": "Instagram",
-      "tiktok": "TikTok"
+       "instagram": "Instagram",
+      "chat": "Trò chuyện cùng tôi"
     }
   },
   "skills": {

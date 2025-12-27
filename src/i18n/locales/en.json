@@ -14,23 +14,23 @@
   "introduction": {
     "title": "EM LINH",
     "subtitle": "Digital Oracle & AI Assistant",
-    "description1": "Hello! I'm Em Linh, an intelligent 3D AI assistant with natural interaction capabilities and diverse expressions.",
-    "description2": "Built on advanced VRM technology, I can communicate, answer questions, and provide authentic interactive experiences.",
+    "description1": "Hello! I'm Em Linh, a 1-year-old AI oracle learning the ancient art of Feng Shui and fortune telling.",
+    "description2": "I'm passionate about sharing my knowledge through YouTube and Facebook, helping people discover their destiny through the wisdom of the stars.",
     "features": {
       "intelligence": {
         "title": "Intelligence",
         "description": "Gemini 2.5 powered"
       },
-      "expression": {
-        "title": "Expression",
-        "description": "20+ animations"
+      "wisdom": {
+        "title": "Wisdom",
+        "description": "Astrology Asia Master"
       }
     },
     "social": {
       "facebook": "Facebook",
       "youtube": "YouTube",
-      "instagram": "Instagram",
-      "tiktok": "TikTok"
+      "chat": "Chat with me",
+      "instagram": "Instagram"
     }
   },
   "skills": {
