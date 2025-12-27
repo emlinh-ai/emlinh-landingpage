@@ -25,8 +25,8 @@ interface UseSectionScrollReturn {
 
 export const useSectionScroll = ({
   totalSections,
-  vrmRef,
-  greetingCompleted,
+  vrmRef: _vrmRef,
+  greetingCompleted: _greetingCompleted,
   playScrollSound,
 }: UseSectionScrollProps): UseSectionScrollReturn => {
   const [currentSection, setCurrentSection] = useState(0);

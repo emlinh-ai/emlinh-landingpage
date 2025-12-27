@@ -32,11 +32,9 @@ const CustomVRMModelSimple = forwardRef<VRMModelRef, CustomVRMModelProps>(
         vrmUrl,
         'https://www.gstatic.com/draco/versioned/decoders/1.5.6/',
         undefined,
-        (loader: { register: (parser: unknown) => unknown }) => {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          loader.register((parser: unknown) => new VRMLoaderPlugin(parser as any));
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          loader.register((parser: unknown) => new VRMAnimationLoaderPlugin(parser as any));
+        (loader: any) => {
+          loader.register((parser: any) => new VRMLoaderPlugin(parser));
+          loader.register((parser: any) => new VRMAnimationLoaderPlugin(parser));
         }
       );
       scene = gltf.scene;

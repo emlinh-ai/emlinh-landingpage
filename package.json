@@ -7,7 +7,13 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:lib": "cd libs/vrm-character-controller && npm run build",
+    "deploy": "scripts\\deploy.bat",
+    "deploy:staging": "scripts\\deploy.bat staging",
+    "deploy:production": "scripts\\deploy-production.bat",
+    "deploy:cf": "wrangler pages deploy dist --project-name emlinh-landingpage",
+    "deploy:emlinh": "scripts\\deploy-production.bat"
   },
   "dependencies": {
     "@emlinh/vrm-character-controller": "file:./libs/vrm-character-controller",
