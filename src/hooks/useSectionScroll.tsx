@@ -13,7 +13,8 @@ interface UseSectionScrollProps {
   totalSections: number;
   vrmRef: React.RefObject<VRMModelRef>;
   greetingCompleted: boolean;
-  animations: string[];
+  playScrollSound: () => void;
+  handleFirstInteraction: () => void;
 }
 
 interface UseSectionScrollReturn {
@@ -27,7 +28,8 @@ export const useSectionScroll = ({
   totalSections,
   vrmRef,
   greetingCompleted,
-  animations,
+  playScrollSound,
+  handleFirstInteraction,
 }: UseSectionScrollProps): UseSectionScrollReturn => {
   const [currentSection, setCurrentSection] = useState(0);
   const sectionsRef = useRef<HTMLElement[]>([]);
@@ -40,6 +42,9 @@ export const useSectionScroll = ({
     }
 
     isScrollingRef.current = true;
+    handleFirstInteraction();
+    playScrollSound();
+    
     const targetY = sectionIndex * window.innerHeight;
     
     gsap.to(window, {
@@ -49,7 +54,6 @@ export const useSectionScroll = ({
       onComplete: () => {
         isScrollingRef.current = false;
         setCurrentSection(sectionIndex);
-        playSectionAnimation(sectionIndex);
       }
     });
   };
@@ -62,14 +66,6 @@ export const useSectionScroll = ({
   // Go to previous section
   const goToPrevSection = () => {
     scrollToSection(currentSection - 1);
-  };
-
-  // Play animation based on current section
-  const playSectionAnimation = (sectionIndex: number) => {
-    if (vrmRef.current && vrmRef.current.playAnimationById && greetingCompleted) {
-      const animationId = animations[sectionIndex] || animations[0];
-      vrmRef.current.playAnimationById(animationId, true);
-    }
   };
 
   // Setup scroll triggers for full screen sections

@@ -1,38 +1,77 @@
 {
   "nav": {
     "brand": "Em Linh AI",
-    "contact": "Contact Partnership"
+    "contact": "Contact Partnership",
+    "playAndDance": "Play and Dance",
+    "stopAndMute": "Stop and Mute"
   },
-  "hero": {
-    "title": "The Future of",
-    "subtitle": "Virtual Human Influencer",
-    "description": "More than just a 3D model. Em Linh is a living AI entity that can think, read horoscopes, and automatically operate social media.",
-    "demo": "View Demo",
-    "tech": "Learn Technology"
+  "loading": {
+    "title": "Loading Em Linh...",
+    "subtitle": "Please wait a moment"
   },
-  "features": {
-    "title": "Em Linh's Capabilities",
-    "description": "Comprehensive AI automation system, from personal interactions to mass content management.",
+  "introduction": {
+    "title": "EM LINH",
+    "subtitle": "Digital Oracle & AI Assistant",
+    "description1": "Hello! I'm Em Linh, an intelligent 3D AI assistant with natural interaction capabilities and diverse expressions.",
+    "description2": "Built on advanced VRM technology, I can communicate, answer questions, and provide authentic interactive experiences.",
+    "features": {
+      "intelligence": {
+        "title": "Intelligence",
+        "description": "Gemini 2.5 powered"
+      },
+      "expression": {
+        "title": "Expression",
+        "description": "20+ animations"
+      }
+    },
+    "social": {
+      "facebook": "Facebook",
+      "youtube": "YouTube",
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
+    }
+  },
+  "skills": {
+    "title": "Special Skills",
     "items": {
-      "qa": {
-        "title": "Real-time Q&A",
-        "description": "Real-time chat with ultra-low latency thanks to Qwen TTS Flash and Gemini LLM integration."
-      },
-      "astrology": {
-        "title": "Horoscope Analysis",
-        "description": "Virtual expert trained on 900 sample charts, providing personalized destiny analysis."
-      },
       "youtube": {
-        "title": "Auto Youtube Channel",
-        "description": "Automatically create content, produce videos and manage Youtube channels without intervention."
+        "title": "YouTube Livestream",
+        "description": "Automatically host livestreams, interact with comments, and intelligently answer viewer questions."
       },
       "facebook": {
-        "title": "Facebook Management",
-        "description": "Automatically reply to Fanpage messages, interactive livestreams and community care."
+        "title": "Facebook Replies",
+        "description": "Manage and reply to Facebook messages, providing 24/7 customer support."
+      },
+      "chat": {
+        "title": "Live Chat",
+        "description": "Integrated chat on website, supporting users with response time under 200ms."
       }
     }
   },
-  "footer": {
-    "copyright": "© 2024 Em Linh AI Project. Built for the future."
+  "fortune": {
+    "title": "Fortune Telling",
+    "card": {
+      "title": "AI Fortune Reading",
+      "description": "With artificial intelligence and deep feng shui knowledge, I can interpret over 900+ different birth charts.",
+      "overview": {
+        "title": "Overview",
+        "description": "Analyze life destiny"
+      },
+      "detail": {
+        "title": "Details",
+        "description": "Interpret 12 zodiac signs"
+      },
+      "conclusion": "Provide helpful advice on career, wealth, love, and health."
+    }
+  },
+  "contact": {
+    "title": "Contact Development",
+    "team": "Em Linh Development Team",
+    "description": "We are always ready to listen to feedback and develop Em Linh to become even more intelligent.",
+    "sendMessage": "Send message to team"
+  },
+  "scrollIndicator": "Scroll to explore ↓",
+  "sections": {
+    "section": "Section"
   }
 }

@@ -1,11 +1,14 @@
 import React from 'react';
 import { Loader2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface LoadingOverlayProps {
   isLoading: boolean;
 }
 
 const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ isLoading }) => {
+  const { t } = useTranslation();
+
   if (!isLoading) return null;
 
   return (
@@ -25,9 +28,9 @@ const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ isLoading }) => {
         
         <div className="space-y-2">
           <p className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Đang tải Em Linh...
+            {t('loading.title')}
           </p>
-          <p className="text-sm text-gray-500">Vui lòng đợi giây lát</p>
+          <p className="text-sm text-gray-500">{t('loading.subtitle')}</p>
         </div>
       </div>
     </div>

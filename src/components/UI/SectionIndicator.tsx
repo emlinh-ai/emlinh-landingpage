@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface SectionIndicatorProps {
   currentSection: number;
@@ -11,6 +12,8 @@ const SectionIndicator: React.FC<SectionIndicatorProps> = ({
   totalSections,
   onSectionClick,
 }) => {
+  const { t } = useTranslation();
+  
   return (
     <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-30 space-y-4">
       {Array.from({ length: totalSections }, (_, index) => (
@@ -31,7 +34,7 @@ const SectionIndicator: React.FC<SectionIndicatorProps> = ({
           
           {/* Tooltip */}
           <div className="absolute right-full mr-4 px-3 py-1 bg-gray-800 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
-            Section {index + 1}
+            {t('sections.section')} {index + 1}
           </div>
         </button>
       ))}

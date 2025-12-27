@@ -21,10 +21,11 @@ const CharacterCanvas: React.FC<CharacterCanvasProps> = ({
     <div className="fixed right-0 top-0 w-1/2 h-screen z-10">
       <Canvas
         camera={{ position: [0, 0.8, 2.5], fov: 35 }}
-        gl={{ antialias: true }}
+        gl={{ antialias: true, alpha: true }}
         className="w-full h-full"
       >
-        <color attach="background" args={['#f0f4f8']} />
+        {/* Transparent background to show gradient */}
+        <color attach="background" args={['transparent']} />
         
         <SceneLighting />
         

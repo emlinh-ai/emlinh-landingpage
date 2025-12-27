@@ -11,7 +11,9 @@ import FortuneSection from './components/sections/FortuneSection';
 import ContactSection from './components/sections/ContactSection';
 import ScrollIndicator from './components/UI/ScrollIndicator';
 import SectionIndicator from './components/UI/SectionIndicator';
+import CustomCursor from './components/UI/CustomCursor';
 import { useSectionScroll } from './hooks/useSectionScroll';
+import { useAudioManager } from './hooks/useAudioManager';
 
 // Register animations
 registerAnimation({
@@ -20,6 +22,15 @@ registerAnimation({
   type: 'fbx',
   path: '/animations/fbx/Standing Idle.fbx',
   category: 'idle',
+  preload: true,
+});
+
+registerAnimation({
+  id: 'dance',
+  name: 'Arms Hip Hop Dance',
+  type: 'fbx',
+  path: '/animations/fbx/Arms Hip Hop Dance.fbx',
+  category: 'gesture',
   preload: true,
 });
 
@@ -41,17 +52,63 @@ const AppCinematic: React.FC = () => {
   const vrmRef = useRef<VRMModelRef | null>(null);
   const vrmUrl = 'emlinh-v2.vrm';
   
-  // Define animations for each section
-  const animations = ['idle', 'idle', 'idle', 'idle'];
-  const totalSections = animations.length;
+  // Audio manager
+  const {
+    isAudioEnabled,
+    isFirstInteraction,
+    isDanceMode,
+    volume,
+    initAudio,
+    playScrollSound,
+    handleFirstInteraction,
+    toggleAudio,
+    updateVolume,
+  } = useAudioManager();
+  
+  // Initialize audio on mount
+  useEffect(() => {
+    initAudio();
+  }, [initAudio]);
+  
+  // Global click handler for first interaction
+  useEffect(() => {
+    const handleGlobalClick = () => {
+      handleFirstInteraction();
+    };
+
+    // Only add listener if it's first interaction
+    if (isFirstInteraction) {
+      document.addEventListener('click', handleGlobalClick, { once: true });
+      
+      return () => {
+        document.removeEventListener('click', handleGlobalClick);
+      };
+    }
+  }, [isFirstInteraction, handleFirstInteraction]);
   
   // Use custom scroll hook
   const { currentSection, scrollToSection } = useSectionScroll({
-    totalSections,
+    totalSections: 4,
     vrmRef: vrmRef as React.RefObject<VRMModelRef>,
     greetingCompleted,
-    animations,
+    playScrollSound,
+    handleFirstInteraction,
   });
+  
+  // Handle VRM animation based on dance mode
+  useEffect(() => {
+    if (vrmRef.current && vrmRef.current.playAnimationById && greetingCompleted) {
+      if (isDanceMode) {
+        // Play dance animation when in dance mode
+        console.log('Playing dance animation');
+        vrmRef.current.playAnimationById('dance', true);
+      } else {
+        // Play idle animation when not in dance mode
+        console.log('Playing idle animation');
+        vrmRef.current.playAnimationById('idle', true);
+      }
+    }
+  }, [isDanceMode, greetingCompleted]);
 
   // Handle VRM load
   useEffect(() => {
@@ -71,6 +128,10 @@ const AppCinematic: React.FC = () => {
       <Navigation 
         onLanguageToggle={toggleLanguage}
         currentLanguage={i18n.language}
+        isAudioEnabled={isAudioEnabled}
+        onAudioToggle={toggleAudio}
+        volume={volume}
+        onVolumeChange={updateVolume}
       />
 
       <CharacterCanvas 
@@ -92,8 +153,13 @@ const AppCinematic: React.FC = () => {
       
       <SectionIndicator 
         currentSection={currentSection}
-        totalSections={totalSections}
+        totalSections={4}
         onSectionClick={scrollToSection}
+      />
+      
+      <CustomCursor 
+        isAudioEnabled={isAudioEnabled}
+        isFirstInteraction={isFirstInteraction}
       />
     </div>
   );

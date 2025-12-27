@@ -1,38 +1,80 @@
 {
   "nav": {
     "brand": "Em Linh AI",
-    "contact": "Liên hệ hợp tác"
+    "contact": "Liên hệ hợp tác",
+    "playAndDance": "Phát nhạc và nhảy",
+    "stopAndMute": "Dừng và tắt tiếng"
   },
-  "hero": {
-    "title": "Tương lai của",
-    "subtitle": "Virtual Human Influencer",
-    "description": "Không chỉ là một mô hình 3D. Em Linh là một thực thể AI sống động, biết tư duy, biết xem tử vi và tự động vận hành mạng xã hội.",
-    "demo": "Xem Demo",
-    "tech": "Tìm hiểu công nghệ"
+  "loading": {
+    "title": "Đang tải Em Linh...",
+    "subtitle": "Vui lòng đợi giây lát"
   },
-  "features": {
-    "title": "Khả năng của Em Linh",
-    "description": "Hệ thống AI tự động hóa toàn diện, từ tương tác cá nhân đến quản lý nội dung đại chúng.",
+  "introduction": {
+    "title": "EM LINH",
+    "subtitle": "Digital Oracle & AI Assistant",
+    "description1": "Xin chào! Tôi là Em Linh, một trợ lý AI 3D thông minh với khả năng tương tác tự nhiên và biểu cảm đa dạng.",
+    "description2": "Được xây dựng trên công nghệ VRM tiên tiến, tôi có thể giao tiếp, giải đáp thắc mắc và mang đến trải nghiệm tương tác chân thực.",
+    "features": {
+      "intelligence": {
+        "title": "Trí tuệ",
+        "description": "Gemini 2.5 powered"
+      },
+      "expression": {
+        "title": "Biểu cảm",
+        "description": "20+ animations"
+      }
+    },
+    "social": {
+      "facebook": "Facebook",
+      "youtube": "YouTube",
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
+    }
+  },
+  "skills": {
+    "title": "Kỹ năng đặc biệt",
     "items": {
-      "qa": {
-        "title": "Real-time Q&A",
-        "description": "Trò chuyện thời gian thực với độ trễ cực thấp nhờ tích hợp Qwen TTS Flash và Gemini LLM."
-      },
-      "astrology": {
-        "title": "Luận giải Tử Vi",
-        "description": "Chuyên gia ảo được đào tạo trên 900 lá số mẫu, đưa ra phân tích vận mệnh cá nhân hóa."
-      },
       "youtube": {
-        "title": "Auto Youtube Channel",
-        "description": "Tự động sáng tạo nội dung, dựng video và quản lý kênh Youtube mà không cần can thiệp."
+        "title": "Livestream YouTube",
+        "description": "Tự động dẫn livestream, tương tác với bình luận và trả lời câu hỏi của người xem một cách thông minh."
       },
       "facebook": {
-        "title": "Facebook Management",
-        "description": "Tự động trả lời tin nhắn Fanpage, livestream tương tác và chăm sóc cộng đồng."
+        "title": "Trả lời Facebook",
+        "description": "Quản lý và trả lời tin nhắn Facebook, hỗ trợ chăm sóc khách hàng 24/7."
+      },
+      "chat": {
+        "title": "Chat trực tiếp",
+        "description": "Tích hợp chat ngay trên website, hỗ trợ người dùng với thời gian phản hồi dưới 200ms."
       }
     }
   },
+  "fortune": {
+    "title": "Luận giải Tử Vi",
+    "card": {
+      "title": "Xem Tử Vi AI",
+      "description": "Với trí tuệ nhân tạo và kiến thức phong thủy sâu rộng, tôi có thể luận giải hơn 900+ lá số Tử Vi khác nhau.",
+      "overview": {
+        "title": "Tổng quan",
+        "description": "Phân tích vận mệnh cuộc đời"
+      },
+      "detail": {
+        "title": "Chi tiết",
+        "description": "Luận giải 12 cung hoàng đạo"
+      },
+      "conclusion": "Đưa ra lời khuyên hữu ích về công danh, tài lộc, tình duyên và sức khỏe."
+    }
+  },
+  "contact": {
+    "title": "Liên hệ phát triển",
+    "team": "Em Linh Development Team",
+    "description": "Chúng tôi luôn sẵn sàng lắng nghe góp ý và phát triển Em Linh ngày càng thông minh hơn.",
+    "sendMessage": "Gửi tin nhắn cho đội ngũ"
+  },
+  "scrollIndicator": "Scroll để khám phá ↓",
+  "sections": {
+    "section": "Section"
+  },
   "footer": {
-    "copyright": "© 2024 Em Linh AI Project. Built for the future."
+    "copyright": " 2024 Em Linh AI Project. Built for the future."
   }
 }
