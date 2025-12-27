@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "brand": "Em Linh AI",
+    "contact": "Contact Partnership"
+  },
+  "hero": {
+    "title": "The Future of",
+    "subtitle": "Virtual Human Influencer",
+    "description": "More than just a 3D model. Em Linh is a living AI entity that can think, read horoscopes, and automatically operate social media.",
+    "demo": "View Demo",
+    "tech": "Learn Technology"
+  },
+  "features": {
+    "title": "Em Linh's Capabilities",
+    "description": "Comprehensive AI automation system, from personal interactions to mass content management.",
+    "items": {
+      "qa": {
+        "title": "Real-time Q&A",
+        "description": "Real-time chat with ultra-low latency thanks to Qwen TTS Flash and Gemini LLM integration."
+      },
+      "astrology": {
+        "title": "Horoscope Analysis",
+        "description": "Virtual expert trained on 900 sample charts, providing personalized destiny analysis."
+      },
+      "youtube": {
+        "title": "Auto Youtube Channel",
+        "description": "Automatically create content, produce videos and manage Youtube channels without intervention."
+      },
+      "facebook": {
+        "title": "Facebook Management",
+        "description": "Automatically reply to Fanpage messages, interactive livestreams and community care."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Em Linh AI Project. Built for the future."
+  }
+}

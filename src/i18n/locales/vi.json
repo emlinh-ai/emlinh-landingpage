@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "brand": "Em Linh AI",
+    "contact": "Liên hệ hợp tác"
+  },
+  "hero": {
+    "title": "Tương lai của",
+    "subtitle": "Virtual Human Influencer",
+    "description": "Không chỉ là một mô hình 3D. Em Linh là một thực thể AI sống động, biết tư duy, biết xem tử vi và tự động vận hành mạng xã hội.",
+    "demo": "Xem Demo",
+    "tech": "Tìm hiểu công nghệ"
+  },
+  "features": {
+    "title": "Khả năng của Em Linh",
+    "description": "Hệ thống AI tự động hóa toàn diện, từ tương tác cá nhân đến quản lý nội dung đại chúng.",
+    "items": {
+      "qa": {
+        "title": "Real-time Q&A",
+        "description": "Trò chuyện thời gian thực với độ trễ cực thấp nhờ tích hợp Qwen TTS Flash và Gemini LLM."
+      },
+      "astrology": {
+        "title": "Luận giải Tử Vi",
+        "description": "Chuyên gia ảo được đào tạo trên 900 lá số mẫu, đưa ra phân tích vận mệnh cá nhân hóa."
+      },
+      "youtube": {
+        "title": "Auto Youtube Channel",
+        "description": "Tự động sáng tạo nội dung, dựng video và quản lý kênh Youtube mà không cần can thiệp."
+      },
+      "facebook": {
+        "title": "Facebook Management",
+        "description": "Tự động trả lời tin nhắn Fanpage, livestream tương tác và chăm sóc cộng đồng."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Em Linh AI Project. Built for the future."
+  }
+}
